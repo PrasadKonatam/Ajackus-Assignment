@@ -21,7 +21,7 @@ const App = () => {
   // Fetch users
   useEffect(() => {
     axios
-      .get("https://jsonplaceholder.org/users")
+      .get("https://jsonplaceholder.typicode.com/users")
       .then((response) => setUsers(response.data))
       .catch(() => setError("Failed to fetch users."));
   }, []);
@@ -31,7 +31,10 @@ const App = () => {
     e.preventDefault();
     if (editing) {
       axios
-        .put(`https://jsonplaceholder.org/users/${formData.id}`, formData)
+        .put(
+          `https://jsonplaceholder.typicode.com/users/${formData.id}`,
+          formData
+        )
         .then(() => {
           setUsers(
             users.map((user) => (user.id === formData.id ? formData : user))
@@ -66,7 +69,7 @@ const App = () => {
   // Delete user
   const handleDelete = (id) => {
     axios
-      .delete(`https://jsonplaceholder.org/users/${id}`)
+      .delete(`https://jsonplaceholder.typicode.com/users/${id}`)
       .then(() => setUsers(users.filter((user) => user.id !== id)))
       .catch(() => setError("Failed to delete user."));
   };

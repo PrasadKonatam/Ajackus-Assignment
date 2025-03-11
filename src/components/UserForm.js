@@ -19,7 +19,7 @@ const UserForm = ({ formData, setFormData, handleSubmit, editing }) => {
             type="text"
             className="form-control"
             placeholder="First Name"
-            value={formData.firstname}
+            value={formData.name}
             onChange={(e) =>
               setFormData({ ...formData, firstname: e.target.value })
             }
@@ -31,7 +31,7 @@ const UserForm = ({ formData, setFormData, handleSubmit, editing }) => {
             type="text"
             className="form-control"
             placeholder="Last Name"
-            value={formData.lastname}
+            value={formData.username}
             onChange={(e) =>
               setFormData({ ...formData, lastname: e.target.value })
             }

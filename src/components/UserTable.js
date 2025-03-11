@@ -18,8 +18,8 @@ const UserTable = ({ users, handleEdit, handleDelete }) => {
           {users.map((user) => (
             <tr key={user.id}>
               <td>{user.id}</td>
-              <td>{user.firstname || "N/A"}</td>
-              <td>{user.lastname || "N/A"}</td>
+              <td>{user.name || "N/A"}</td>
+              <td>{user.username || "N/A"}</td>
               <td>{user.email || "N/A"}</td>
               <td>{user.department || "N/A"}</td>
               <td>
